@@ -9,6 +9,7 @@ const Coin = ({
   volume,
   image,
   priceChange,
+  sentiment,
 }) => {
   return (
     <div className='coin-container'>
@@ -26,6 +27,16 @@ const Coin = ({
             <p className='coin-percent red'>{priceChange.toFixed(2)}%</p>
           ) : (
             <p className='coin-percent green'>{priceChange.toFixed(2)}%</p>
+          )}
+
+          {sentiment < 0 ? (
+            <p className='sentiment'>
+              <i class='bi bi-hand-thumbs-up-fill red'></i>
+            </p>
+          ) : (
+            <p className='sentiment'>
+              <i class='bi bi-hand-thumbs-up-fill green'></i>
+            </p>
           )}
 
           <p className='coin-marketcap'>
