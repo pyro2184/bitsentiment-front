@@ -33,26 +33,30 @@ const Coin = ({
             <p className='coin-percent green'>{priceChange.toFixed(2)}%</p>
           )}
           <div className='coin-sentiment'>
-            {sentiment < 50 ? (
-              <p className='sentiment red'>
-                <SemiCircleProgressBar
-                  percentage={sentiment.toFixed(2)}
-                  diameter={100}
-                  showPercentValue
-                  strokeWidth={5}
-                  stroke='#f00606'
-                />
-              </p>
+            {sentiment ? (
+              sentiment < 50 ? (
+                <p className='sentiment red'>
+                  <SemiCircleProgressBar
+                    percentage={sentiment.toFixed(2)}
+                    diameter={100}
+                    showPercentValue
+                    strokeWidth={5}
+                    stroke='#f00606'
+                  />
+                </p>
+              ) : (
+                <p className='sentiment green'>
+                  <SemiCircleProgressBar
+                    percentage={sentiment.toFixed(2)}
+                    diameter={100}
+                    showPercentValue
+                    strokeWidth={5}
+                    stroke='#11d811'
+                  />
+                </p>
+              )
             ) : (
-              <p className='sentiment green'>
-                <SemiCircleProgressBar
-                  percentage={sentiment.toFixed(2)}
-                  diameter={100}
-                  showPercentValue
-                  strokeWidth={5}
-                  stroke='#11d811'
-                />
-              </p>
+              '-'
             )}
           </div>
           <p className='coin-marketcap'>${marketcap.toLocaleString()}</p>
