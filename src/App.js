@@ -27,7 +27,7 @@ function App() {
   const [analyzed, setAnalyzed] = useState({});
   useEffect(() => {
     axios
-      .get('http://112.186.88.149/api/main')
+      .get('http://112.186.88.149:8000/api/main')
       .then((res) => {
         setAnalyzed(res.data['coin']);
         setFng(res.data['fng']);
