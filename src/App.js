@@ -81,7 +81,7 @@ function App() {
           return (
             <Coin
               key={coin.id}
-              rank={index + 1}
+              rank={coins.indexOf(coin) + 1}
               name={coin.name}
               price={coin.current_price}
               symbol={coin.symbol}
